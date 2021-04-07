@@ -1,6 +1,13 @@
 #设置端口号
 server:
   port: 8089
-  #设置项目名
-  servlet:
-    context-path: /dev
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=yes&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: zywl!123kj
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapperLocations: classpath:mapper/*.xml
+  typeAliasesPackage: com.zywl.model

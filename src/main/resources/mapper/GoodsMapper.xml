@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zywl.dao.GoodsMapper">
+
+    <select id="getList" parameterType="goodsModel" resultType="goodsModel">
+        SELECT
+        goods_id as goodsId,
+        goods_name as goodsName,
+        goods_price as goodsPrice,
+        goods_pic as goodsPic,
+        house_id as houseId
+        FROM
+        goods tbl
+        where 1=1
+        <if test="houseId != '' and houseId != null ">
+            and house_id = #{houseId}
+        </if>
+    </select>
+
+</mapper>

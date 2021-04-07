@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zywl.dao.ShopHouseMapper">
+
+    <select id="getList" parameterType="shopHouseModel" resultType="shopHouseModel">
+        SELECT
+        house_id as houseId,
+        house_name as houseName,
+        house_icon as houseIcon,
+        credibility as credibility,
+        house_phone as housePhone,
+        banner as banner
+        FROM
+        shop_house tbl
+        where 1=1
+        <if test="houseName != '' and houseName != null ">
+            and house_name like concat("%",#{houseName},"%")
+        </if>
+        limit ${pageNow},${pageSize}
+    </select>
+
+    <select id="getCount" parameterType="shopHouseModel" resultType="java.lang.Integer">
+        SELECT COUNT(1) FROM shop_house
+        where 1=1
+        <if test="houseName != '' and houseName != null ">
+            and house_name like concat("%",#{houseName},"%")
+        </if>
+    </select>
+
+</mapper>
