@@ -10,4 +10,6 @@ public interface GoodsMapper {
 
     public List<GoodsModel> getList(GoodsModel model);
 
+    public int getCount(GoodsModel model);
+
 }

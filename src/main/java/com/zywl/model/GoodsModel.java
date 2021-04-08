@@ -3,7 +3,7 @@ package com.zywl.model;
 /**
  * 商品bean
  */
-public class GoodsModel {
+public class GoodsModel extends PageModel {
 
     private Integer goodsId;
 
@@ -14,6 +14,8 @@ public class GoodsModel {
     private String goodsPic;
 
     private Integer houseId;
+
+    private Integer isOne;
 
 
     public Integer getGoodsId() {
@@ -54,5 +56,13 @@ public class GoodsModel {
 
     public void setHouseId(Integer houseId) {
         this.houseId = houseId;
+    }
+
+    public Integer getIsOne() {
+        return isOne;
+    }
+
+    public void setIsOne(Integer isOne) {
+        this.isOne = isOne;
     }
 }

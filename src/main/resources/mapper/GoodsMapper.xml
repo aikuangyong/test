@@ -9,12 +9,25 @@
         goods_name as goodsName,
         goods_price as goodsPrice,
         goods_pic as goodsPic,
-        house_id as houseId
+        house_id as houseId,
+        is_one as isOne
         FROM
         goods tbl
         where 1=1
         <if test="houseId != '' and houseId != null ">
             and house_id = #{houseId}
+        </if>
+        <if test="isOne != '' and isOne != null ">
+            and is_one = #{isOne}
+        </if>
+        limit ${pageNow},${pageSize}
+    </select>
+
+    <select id="getCount" parameterType="goodsModel" resultType="java.lang.Integer">
+        SELECT COUNT(1) FROM goods
+        where 1=1
+        <if test="isOne != '' and isOne != null ">
+            and is_one = #{isOne}
         </if>
     </select>
 
