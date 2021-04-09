@@ -17,6 +17,17 @@ public class GoodsModel extends PageModel {
 
     private Integer isOne;
 
+    private String productData;
+
+    private String houseType;
+
+    private String detailPic;
+
+    private double lotteryPrice;
+
+    //参与人数
+    private Integer numberPeople;
+
 
     public Integer getGoodsId() {
         return goodsId;
@@ -64,5 +75,45 @@ public class GoodsModel extends PageModel {
 
     public void setIsOne(Integer isOne) {
         this.isOne = isOne;
+    }
+
+    public String getProductData() {
+        return productData;
+    }
+
+    public void setProductData(String productData) {
+        this.productData = productData;
+    }
+
+    public String getHouseType() {
+        return houseType;
+    }
+
+    public void setHouseType(String houseType) {
+        this.houseType = houseType;
+    }
+
+    public String getDetailPic() {
+        return detailPic;
+    }
+
+    public void setDetailPic(String detailPic) {
+        this.detailPic = detailPic;
+    }
+
+    public double getLotteryPrice() {
+        return lotteryPrice;
+    }
+
+    public void setLotteryPrice(double lotteryPrice) {
+        this.lotteryPrice = lotteryPrice;
+    }
+
+    public Integer getNumberPeople() {
+        return numberPeople;
+    }
+
+    public void setNumberPeople(Integer numberPeople) {
+        this.numberPeople = numberPeople;
     }
 }

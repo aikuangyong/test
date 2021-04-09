@@ -10,7 +10,10 @@
         goods_price as goodsPrice,
         goods_pic as goodsPic,
         house_id as houseId,
-        is_one as isOne
+        is_one as isOne,
+        product_data as productData,
+        house_type as houseType,
+        lottery_price as lotteryPrice
         FROM
         goods tbl
         where 1=1
@@ -30,5 +33,41 @@
             and is_one = #{isOne}
         </if>
     </select>
+
+    <select id="getGoodDetail" parameterType="goodsModel" resultType="goodsModel">
+        SELECT
+        goods_id as goodsId,
+        goods_name as goodsName,
+        goods_price as goodsPrice,
+        goods_pic as goodsPic,
+        house_id as houseId,
+        is_one as isOne,
+        product_data as productData,
+        house_type as houseType,
+        detail_pic as detailPic,
+        lottery_price as lotteryPrice
+        FROM
+        goods tbl
+        where 1=1
+        <if test="goodsId != '' and goodsId != null ">
+            and goods_id = #{goodsId}
+        </if>
+    </select>
+
+
+    <insert id="insertSnatch" parameterType="snatchOrderModel">
+        insert into snatch_order
+        (
+        goods_id,
+        user_id,
+        create_time
+        )
+        values
+        (
+        #{goodsId},
+        #{userId},
+        now()
+        )
+    </insert>
 
 </mapper>

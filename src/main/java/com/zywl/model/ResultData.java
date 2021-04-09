@@ -29,6 +29,14 @@ public class ResultData {
         return resultData.toString();
     }
 
+    public static String toSuccessDataObj(Object obj) {
+        ResultData resultData = new ResultData();
+        resultData.setState("SUCCESS");
+        resultData.setDataObj(obj);
+        resultData.setSuccess(true);
+        return resultData.toString();
+    }
+
     public int getPageCount() {
         return pageCount;
     }
