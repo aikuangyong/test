@@ -1,5 +1,7 @@
 package com.zywl.model;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.util.Date;
 
 /**
@@ -9,8 +11,10 @@ public class SnatchOrderModel {
 
     private Integer snatchId;
 
+    @ApiModelProperty(value = "商品ID", required = true)
     private Integer goodsId;
 
+    @ApiModelProperty(value = "用户ID", required = true)
     private Integer userId;
 
     public Integer getSnatchId() {

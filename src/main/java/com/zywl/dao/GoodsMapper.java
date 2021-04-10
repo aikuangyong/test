@@ -17,4 +17,7 @@ public interface GoodsMapper {
 
     public void insertSnatch(SnatchOrderModel model);
 
+    public int getSnatchCount(GoodsModel model);
+
+
 }

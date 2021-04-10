@@ -17,10 +17,10 @@
         FROM
         goods tbl
         where 1=1
-        <if test="houseId != '' and houseId != null ">
+        <if test="houseId != null ">
             and house_id = #{houseId}
         </if>
-        <if test="isOne != '' and isOne != null ">
+        <if test="isOne != null ">
             and is_one = #{isOne}
         </if>
         limit ${pageNow},${pageSize}
@@ -29,7 +29,7 @@
     <select id="getCount" parameterType="goodsModel" resultType="java.lang.Integer">
         SELECT COUNT(1) FROM goods
         where 1=1
-        <if test="isOne != '' and isOne != null ">
+        <if test="isOne != null ">
             and is_one = #{isOne}
         </if>
     </select>
@@ -49,7 +49,7 @@
         FROM
         goods tbl
         where 1=1
-        <if test="goodsId != '' and goodsId != null ">
+        <if test="goodsId != null ">
             and goods_id = #{goodsId}
         </if>
     </select>
@@ -69,5 +69,13 @@
         now()
         )
     </insert>
+
+    <select id="getSnatchCount" parameterType="goodsModel" resultType="java.lang.Integer">
+        SELECT COUNT(1) FROM snatch_order
+        where 1=1
+        <if test="goodsId != null ">
+            and goods_id = #{goodsId}
+        </if>
+    </select>
 
 </mapper>

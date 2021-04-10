@@ -37,8 +37,9 @@ public class GoodsService {
     public ResultData getShopDetail(GoodsModel model) {
         ResultData returnData = new ResultData();
         GoodsModel goodsModel = goodsMapper.getGoodDetail(model);
-        //当前参与人数
-        goodsModel.setNumberPeople(80);
+        //查询参与一元夺宝的人数
+        int numberPeople = goodsMapper.getSnatchCount(model);
+        goodsModel.setNumberPeople(numberPeople);
         returnData.setState("SUCCESS");
         returnData.setSuccess(true);
         returnData.setDataObj(JSON.toJSONString(goodsModel));
