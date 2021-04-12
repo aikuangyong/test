@@ -78,4 +78,27 @@
         </if>
     </select>
 
+    <insert id="insertCart" parameterType="cartModel">
+        insert into cart
+        (
+        u_id,
+        s_id,
+        s_name,
+        s_price,
+        img_src,
+        s_num,
+        s_status
+        )
+        values
+        (
+        #{uId},
+        #{sId},
+        #{sName},
+        #{sPrice},
+        #{imgStr},
+        #{sNum},
+        #{sStatus}
+        )
+    </insert>
+
 </mapper>

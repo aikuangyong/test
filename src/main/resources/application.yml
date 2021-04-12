@@ -1,14 +1,3 @@
 spring:
   profiles:
     active: dev
-
-
-#配置日志
-logging:
-  level:
-    #不同目录下的日志可配置不同级别
-    org.springfromework.web: INFO
-    org.hibernate: ERROR
-  #采用相对路径方式将日志文件输出到【log/myspringboot.log】
-  file:
-    name: log/myspringboot.log

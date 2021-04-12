@@ -2,6 +2,7 @@ package com.zywl.service;
 
 import com.alibaba.fastjson.JSON;
 import com.zywl.dao.GoodsMapper;
+import com.zywl.model.CartModel;
 import com.zywl.model.GoodsModel;
 import com.zywl.model.ResultData;
 import com.zywl.model.SnatchOrderModel;
@@ -49,6 +50,11 @@ public class GoodsService {
 
     public SnatchOrderModel insertSnatch(SnatchOrderModel model) {
         goodsMapper.insertSnatch(model);
+        return model;
+    }
+
+    public CartModel insertCart(CartModel model) {
+        goodsMapper.insertCart(model);
         return model;
     }
 
