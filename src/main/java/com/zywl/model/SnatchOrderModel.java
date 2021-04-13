@@ -2,8 +2,6 @@ package com.zywl.model;
 
 import io.swagger.annotations.ApiModelProperty;
 
-import java.util.Date;
-
 /**
  * 夺宝订单bean
  */

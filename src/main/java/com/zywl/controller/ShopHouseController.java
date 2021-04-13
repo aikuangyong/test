@@ -35,7 +35,7 @@ public class ShopHouseController extends BaseController {
      */
     @RequestMapping(value = "/getData", method = RequestMethod.POST)
     @ResponseBody
-    @ApiOperation(value = "app店铺展示", notes = "app店铺展示")
+    @ApiOperation(value = "app店铺展示列表", notes = "app店铺展示列表")
     public String getData(@ModelAttribute ShopHouseModel model) {
         try {
             return shopHouseService.getHouseList(model).toString();

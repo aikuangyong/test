@@ -1,6 +1,5 @@
 package com.zywl.dao;
 
-import com.zywl.model.CartModel;
 import com.zywl.model.GoodsModel;
 import com.zywl.model.SnatchOrderModel;
 import org.springframework.stereotype.Repository;
@@ -19,8 +18,6 @@ public interface GoodsMapper {
     public void insertSnatch(SnatchOrderModel model);
 
     public int getSnatchCount(GoodsModel model);
-
-    public void insertCart(CartModel model);
 
 
 }

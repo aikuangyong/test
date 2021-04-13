@@ -29,6 +29,13 @@ public class ResultData {
         return resultData.toString();
     }
 
+    public static String toSuccessString() {
+        ResultData resultData = new ResultData();
+        resultData.setState("SUCCESS");
+        resultData.setSuccess(true);
+        return resultData.toString();
+    }
+
     public static String toSuccessDataObj(Object obj) {
         ResultData resultData = new ResultData();
         resultData.setState("SUCCESS");

@@ -53,11 +53,6 @@ public class GoodsService {
         return model;
     }
 
-    public CartModel insertCart(CartModel model) {
-        goodsMapper.insertCart(model);
-        return model;
-    }
-
 
     /**
      * 一元夺宝中奖者编号

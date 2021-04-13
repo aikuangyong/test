@@ -1,10 +1,13 @@
 package com.zywl.model;
 
+import io.swagger.annotations.ApiModelProperty;
+
 /**
  * 购物车bean
  */
 public class CartModel {
 
+    @ApiModelProperty(hidden = true)
     private Integer cId;
 
     private Integer uId;

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zywl.dao.CartMapper">
+
+
+    <insert id="insertCart" parameterType="cartModel">
+        insert into cart
+        (
+        u_id,
+        s_id,
+        s_name,
+        s_price,
+        img_src,
+        s_num,
+        s_status
+        )
+        values
+        (
+        #{uId},
+        #{sId},
+        #{sName},
+        #{sPrice},
+        #{imgStr},
+        #{sNum},
+        #{sStatus}
+        )
+    </insert>
+
+    <select id="getGoodCart" parameterType="cartModel" resultType="cartModel">
+        SELECT
+        u_id as uId,
+        s_id as sId,
+        s_name as sName,
+        s_price as sPrice,
+        img_src as imgStr,
+        s_num as sNum,
+        s_status as sStatus
+        FROM
+        cart tbl
+        where 1=1
+        <if test="uId != null ">
+            and u_id = #{uId}
+        </if>
+    </select>
+
+    <delete id="delete" parameterType="java.util.List">
+        delete FROM cart where
+        c_id in
+        <foreach collection="idList" item="primaryKey" index="no" open="("
+                 separator="," close=")">
+            #{primaryKey}
+        </foreach>
+    </delete>
+
+
+</mapper>
