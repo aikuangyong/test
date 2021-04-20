@@ -1,5 +1,7 @@
 package com.zywl.model;
 
+import java.math.BigDecimal;
+
 /**
  * 商品bean
  */
@@ -9,7 +11,7 @@ public class GoodsModel extends PageModel {
 
     private String goodsName;
 
-    private double goodsPrice;
+    private BigDecimal goodsPrice;
 
     private String goodsPic;
 
@@ -23,7 +25,7 @@ public class GoodsModel extends PageModel {
 
     private String detailPic;
 
-    private double lotteryPrice;
+    private BigDecimal lotteryPrice;
 
     //参与人数
     private Integer numberPeople;
@@ -45,11 +47,11 @@ public class GoodsModel extends PageModel {
         this.goodsName = goodsName;
     }
 
-    public double getGoodsPrice() {
+    public BigDecimal getGoodsPrice() {
         return goodsPrice;
     }
 
-    public void setGoodsPrice(double goodsPrice) {
+    public void setGoodsPrice(BigDecimal goodsPrice) {
         this.goodsPrice = goodsPrice;
     }
 
@@ -101,11 +103,11 @@ public class GoodsModel extends PageModel {
         this.detailPic = detailPic;
     }
 
-    public double getLotteryPrice() {
+    public BigDecimal getLotteryPrice() {
         return lotteryPrice;
     }
 
-    public void setLotteryPrice(double lotteryPrice) {
+    public void setLotteryPrice(BigDecimal lotteryPrice) {
         this.lotteryPrice = lotteryPrice;
     }
 

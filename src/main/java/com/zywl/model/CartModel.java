@@ -2,6 +2,8 @@ package com.zywl.model;
 
 import io.swagger.annotations.ApiModelProperty;
 
+import java.math.BigDecimal;
+
 /**
  * 购物车bean
  */
@@ -16,7 +18,7 @@ public class CartModel {
 
     private String sName;
 
-    private double sPrice;
+    private BigDecimal sPrice;
 
     private String imgStr;
 
@@ -56,11 +58,11 @@ public class CartModel {
         this.sName = sName;
     }
 
-    public double getsPrice() {
+    public BigDecimal getsPrice() {
         return sPrice;
     }
 
-    public void setsPrice(double sPrice) {
+    public void setsPrice(BigDecimal sPrice) {
         this.sPrice = sPrice;
     }
 
